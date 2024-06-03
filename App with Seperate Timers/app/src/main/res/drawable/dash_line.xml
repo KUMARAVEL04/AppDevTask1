@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <layer-list>
+            <item android:left="0dp" android:height="2dp" android:width="10dp">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/darkGrey">
+                    </solid>
+                </shape>
+            </item>
+            <item android:left="20dp" android:height="2dp" android:width="10dp">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/darkGrey">
+                    </solid>
+                </shape>
+            </item>
+            <item android:left="40dp" android:height="2dp" android:width="10dp">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/darkGrey">
+                    </solid>
+                </shape>
+            </item>
+            <item android:left="60dp" android:height="2dp" android:width="10dp">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/darkGrey">
+                    </solid>
+                </shape>
+            </item>
+            <item android:left="80dp" android:height="2dp" android:width="10dp">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/darkGrey">
+                    </solid>
+                </shape>
+            </item>
+            <item android:left="100dp" android:height="2dp" android:width="10dp">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/darkGrey">
+                    </solid>
+                </shape>
+            </item>
+            <item android:left="120dp" android:height="2dp" android:width="10dp">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/darkGrey">
+                    </solid>
+                </shape>
+            </item>
+            <item android:left="140dp" android:height="2dp" android:width="10dp">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/darkGrey">
+                    </solid>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" android:variablePadding="true" >
+    <item >
+        <layer-list>
+            <item android:height="66dp" android:gravity="center_vertical" android:width="120dp">
+                <shape android:shape="rectangle" >
+                    <solid android:color="@color/grey_dark"></solid>
+                </shape>
+            </item>
+            <item android:height="76dp" android:width="72dp" android:gravity="center_vertical" android:left="112dp">
+                <rotate xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:fromDegrees="90"
+                    android:toDegrees="90"
+                    android:drawable="@drawable/baseline_change_history_24">
+                </rotate>
+            </item>
+        </layer-list>
+    </item>
+</selector>

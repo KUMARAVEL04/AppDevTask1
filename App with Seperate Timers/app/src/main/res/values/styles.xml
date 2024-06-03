@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="square_button">
+        <item name="layout_constraintDimensionRatio">H,1:1</item>
+    </style>
+    <style name="editButtonText">
+        <item name="android:layout_width">209dp</item>
+        <item name="android:layout_height">105dp</item>
+        <item name="android:background">@drawable/texticon</item>
+        <item name="android:backgroundTint">#3D4175</item>
+        <item name="android:drawableTop">@drawable/icon_revised</item>
+        <item name="android:drawableBottom">@drawable/dash_line</item>
+        <item name="android:drawableTint">#FF5F57</item>
+        <item name="android:ems">10</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">text</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textColorHint">#BEB6B3B3</item>
+    </style>
+
+    <style name="select_icon">
+        <item name="android:layout_width">214dp</item>
+        <item name="android:layout_height">112dp</item>
+        <item name="android:layout_marginEnd">36dp</item>
+        <item name="android:elevation">10dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:background">@drawable/texticon</item>
+        <item name="android:backgroundTint">#3D4175</item>
+        <item name="android:drawableTop">@drawable/icon_revised</item>
+        <item name="android:drawableBottom">@drawable/dash_line</item>
+        <item name="android:drawableTint">#FF5F57</item>
+        <item name="android:ems">10</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">text</item>
+        <item name="android:textColorHint">#BEB6B3B3</item>
+    </style>
+    <style name="select_icon2">
+        <item name="android:layout_width">214dp</item>
+        <item name="android:layout_height">112dp</item>
+        <item name="android:layout_marginEnd">36dp</item>
+        <item name="android:elevation">10dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:backgroundTint">#3D4175</item>
+        <item name="android:ems">10</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">text</item>
+        <item name="android:textColorHint">#BEB6B3B3</item>
+    </style>
+
+    <style name="start_icons">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:backgroundTint">@color/evenLigherBlue</item>
+        <item name="android:paddingLeft">50dp</item>
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingRight">50dp</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">50dp</item>
+        <item name="android:background">@drawable/name_bar</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColor">#F1F1F1</item>
+        <item name="android:textSize">34sp</item>
+    </style>
+</resources>

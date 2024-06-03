@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Color Conquest</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="question_mark">\u003F</string>
+    <string name="rules"><b>GAME RULES</b></string>
+    <string name="player"><u>PLAYER</u></string>
+    <string name="empty" />
+    <string name="rule1"><b>1st Turn of each player:</b> Players can choose any tile on the grid on this turn only. Clicking a tile assigns your colour to it and awards you 3 points on that tile.\n\n<b>Subsequent Turns:</b> After the first turn, players can only click on tiles that already have their own colour. Clicking a tile with your colour adds 1 point to that tile.The background colour indicates the next player.\n\n<b>Conquest and Expansion:</b> When a tile with your colour reaches 4 points, it triggers an expansion:\n\n
+        <ul>
+            <li>\tThe colour completely disappears from the original tile.\n\n</li>
+            <li>\tYour colour spreads to the four surrounding squares in a plus shape (up, down, left, right).\n\n</li>
+            <li>\tEach of the four surrounding squares gains 1 point with your colour.\n\n</li>
+            <li>\tIf any of the four has your opponent\’s colour, you conquer the opponent\'s points on that tile while adding a point to it, completely erasing theirs.\n\n</li>
+        </ul>Players take turns clicking on tiles and the objective is to eliminate your opponent\'s colour entirely from the screen.\n\n. In case of draws, score is used as a factor to determine the victor. In case of total draw, another match is automatically started.</string>
+</resources>
