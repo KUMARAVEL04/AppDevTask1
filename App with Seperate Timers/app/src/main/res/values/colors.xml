@@ -5,12 +5,13 @@
     <color name="chromeYellow">#fcc203</color>
     <color name="lightBlue">#4287f5</color>
     <color name="lightGray">#D3CCCC</color>
-    <color name="red">#CF1A0C</color>
+    <color name="red">#FE5F57</color>
     <color name="evenLigherBlue">#2fb6f0</color>
     <color name="questionColor">#3b4276</color>
     <color name="darkGreyTransclucent">#001f1f1f</color>
     <color name="darkGrey">#A6242424</color>
     <color name="grey_dark">#3D3D3D</color>
-    <color name="lightred">#CF1A0C</color>
+    <color name="lightred">#FE5F57</color>
+    <color name="lighterred">#FE5F57</color>
 
 </resources>

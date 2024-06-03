@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             main.setBackgroundColor(Color.parseColor("#4287F5"));
         }
         else{
-            main.setBackgroundColor(Color.parseColor("#CF1A0C"));
+            main.setBackgroundColor(Color.parseColor("#FE5F57"));
 
         }
     }
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
             main.setBackgroundColor(ContextCompat.getColor(this, R.color.lightred));
         }
         else{
-            main.setBackgroundColor(ContextCompat.getColor(this, R.color.lightBlue));
+            main.setBackgroundColor(ContextCompat.getColor(this, R.color.evenLigherBlue));
         }
         turnCounter= findViewById(R.id.turnCo);
         turnCounter2=findViewById(R.id.turnCo2);
@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
             p2="Player 2";
         }
         player1.setText(p1);
-        player1.setTextColor(ContextCompat.getColor(this, R.color.lightBlue));
+        player1.setTextColor(ContextCompat.getColor(this, R.color.evenLigherBlue));
         player2.setText(p2);
         player2.setTextColor(ContextCompat.getColor(this, R.color.lightred));
         field = findViewById(R.id.Field1);

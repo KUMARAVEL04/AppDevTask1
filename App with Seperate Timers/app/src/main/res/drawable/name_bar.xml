@@ -2,12 +2,12 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android" android:variablePadding="true" >
     <item >
         <layer-list>
-            <item android:height="66dp" android:gravity="center_vertical" android:width="120dp">
+            <item android:height="50dp" android:gravity="center_vertical" android:width="120dp">
                 <shape android:shape="rectangle" >
                     <solid android:color="@color/grey_dark"></solid>
                 </shape>
             </item>
-            <item android:height="76dp" android:width="72dp" android:gravity="center_vertical" android:left="112dp">
+            <item android:height="45dp" android:width="55dp" android:gravity="center_vertical" android:left="109dp">
                 <rotate xmlns:android="http://schemas.android.com/apk/res/android"
                     android:fromDegrees="90"
                     android:toDegrees="90"
