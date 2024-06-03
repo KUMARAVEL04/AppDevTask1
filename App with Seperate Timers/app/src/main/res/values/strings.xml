@@ -12,5 +12,5 @@
             <li>\tYour colour spreads to the four surrounding squares in a plus shape (up, down, left, right).\n\n</li>
             <li>\tEach of the four surrounding squares gains 1 point with your colour.\n\n</li>
             <li>\tIf any of the four has your opponent\’s colour, you conquer the opponent\'s points on that tile while adding a point to it, completely erasing theirs.\n\n</li>
-        </ul>Players take turns clicking on tiles and the objective is to eliminate your opponent\'s colour entirely from the screen.\n\n. In case of draws, score is used as a factor to determine the victor. In case of total draw, another match is automatically started.</string>
+        </ul>Players take turns clicking on tiles and the objective is to eliminate your opponent\'s colour entirely from the screen.\n\n. In case of draws, score is used as a factor to determine the victor. In case of total draw, another match is automatically started.\n\n Default Values are implemented for quick matches.\n\nPower ups are provided to the match losers in a series match. Power ups include turn priority and additional points in UnTimed mode and additional 5 seconds in Timed mode\n\n<n></n></string>
 </resources>
