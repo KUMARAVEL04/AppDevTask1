@@ -2,15 +2,23 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <layer-list>
-            <item android:height="50dp" android:width="60dp" android:left="25dp">
-                <shape android:shape="rectangle">
-                    <solid android:color="@color/grey_dark"/>
-                </shape>
-            </item>
+
             <item android:height="50dp" android:width="50dp">
                 <shape android:shape="oval">
                     <solid android:color="@color/grey_dark">
                     </solid>
+                    <stroke android:color="@color/black" android:width="2dp"></stroke>
+                </shape>
+            </item>
+            <item android:height="50dp" android:width="60dp" android:left="25dp">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/grey_dark"/>
+                    <stroke android:color="@color/black" android:width="2dp"></stroke>
+                </shape>
+            </item>
+            <item android:height="46dp" android:width="60dp" android:left="25dp" android:gravity="center_vertical">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/grey_dark"/>
                 </shape>
             </item>
         </layer-list>

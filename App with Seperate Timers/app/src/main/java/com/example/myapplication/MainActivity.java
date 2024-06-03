@@ -134,7 +134,9 @@ public class MainActivity extends AppCompatActivity {
             p2="Player 2";
         }
         player1.setText(p1);
+        player1.setTextColor(ContextCompat.getColor(this, R.color.lightBlue));
         player2.setText(p2);
+        player2.setTextColor(ContextCompat.getColor(this, R.color.lightred));
         field = findViewById(R.id.Field1);
         field.removeAllViews();
         createGrid(field,buttonx);
