@@ -82,6 +82,13 @@ public class Block extends AppCompatButton {
         Block but =this;
         int x=but.getCount();
         int j=but.getId();
+        int row=j/columnx;
+        int col=j%columnx;
+        System.out.println("====");
+        System.out.println(j);
+        System.out.println(row);
+        System.out.println(col);
+        System.out.println("****");
         if(tn<2){
             x=x+2;
         }
@@ -97,37 +104,53 @@ public class Block extends AppCompatButton {
             but.setXolor(0);
             but.setEnabled(true);
             but.tint(0);
-            ArrayList<Block> abc=blocks.get(j/rowx);
-            if(j%rowx>0&&j%rowx<columnx-1){
-                btf=abc.get(j%rowx-1);
+            if(col>0&&col<columnx-1){
+                System.out.println(1);
+                btf=blocks.get(row).get(col-1);
                 btf.refresh(blocks,tn,color,rowx,columnx);
-                btf=abc.get(j%rowx+1);
-                btf.refresh(blocks,tn,color,rowx,columnx);
-            }
-            if(j%rowx==0){
-                btf=abc.get(j%rowx+1);
+                btf=blocks.get(row).get(col+1);
                 btf.refresh(blocks,tn,color,rowx,columnx);
             }
-            if(j%rowx==columnx-1){
-                btf=abc.get(j%rowx-1);
+            else {
+                System.out.println("****\n");
+                System.out.println(columnx);
+                System.out.println("====");
+                if(columnx>1) {
+                    if (col == 0) {
+                        System.out.println(2);
+                        System.out.println(col);
+                        System.out.println(row);
+                        btf = blocks.get(row).get((col)+1);
+                        btf.refresh(blocks, tn, color, rowx, columnx);
+                    } else if (col == (columnx - 1)) {
+                        System.out.println(3);
+                        btf = blocks.get(row).get((col)-1);
+                        btf.refresh(blocks, tn, color, rowx, columnx);
+                    }
+                }
+            }
+            if(row>0&&row<rowx-1){
+                System.out.println(4);
+                btf=blocks.get(row-1).get(col);
+                btf.refresh(blocks,tn,color,rowx,columnx);
+                btf=blocks.get(row+1).get(col);
                 btf.refresh(blocks,tn,color,rowx,columnx);
             }
-            if(j/rowx>0&&j/rowx<rowx-1){
-                btf=blocks.get(j/rowx-1).get(j%rowx);
-                btf.refresh(blocks,tn,color,rowx,columnx);
-                btf=blocks.get(j/rowx+1).get(j%rowx);
-                btf.refresh(blocks,tn,color,rowx,columnx);
-            }
-            if(j/rowx==0){
-                btf=blocks.get(j/rowx+1).get(j%rowx);
-                btf.refresh(blocks,tn,color,rowx,columnx);
-            }
-            if(j/rowx==rowx-1){
-                btf=blocks.get(j/rowx-1).get(j%rowx);
-                btf.refresh(blocks,tn,color,rowx,columnx);
+            else {
+                if(rowx>1) {
+                    if (row == 0) {
+                        System.out.println(5);
+                        btf = blocks.get((row)+1).get(col);
+                        btf.refresh(blocks, tn, color, rowx, columnx);
+                    } else if (row == rowx-1) {
+                        System.out.println(6);
+                        btf = blocks.get((row)-1).get(col);
+                        btf.refresh(blocks, tn, color, rowx, columnx);
+                    }
+                }
             }
         }
-        blocks.get(j/rowx).set(j%rowx,but);
+        blocks.get(row).set(col,but);
     }
 
 

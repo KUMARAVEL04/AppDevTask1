@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -70,9 +71,33 @@ public class gridChecker extends AppCompatActivity {
                 });
                 mp.start();
                 TextView ab = findViewById(R.id.count1);
-                Integer a =Integer.parseInt(ab.getText().toString())-1;
-                if(a<0){
-                    a=0;
+                TextView ba = findViewById(R.id.count2);
+                Integer b =Integer.parseInt(ba.getText().toString());
+                Integer a =Integer.parseInt(ab.getText().toString());
+                if(b*a>2){
+                    a=a-1;
+
+                    final MediaPlayer mx = MediaPlayer.create(getBaseContext(), R.raw.error);
+                    mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        public void onCompletion(MediaPlayer mx) {
+                            mx.release();
+                        }
+                    });
+                    mx.start();
+                    Toast toast = Toast.makeText(getBaseContext(),"Needs atleast 2 boxes",Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                if(a<1){
+                    a=1;
+                    final MediaPlayer mx = MediaPlayer.create(getBaseContext(), R.raw.error);
+                    mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        public void onCompletion(MediaPlayer mx) {
+                            mx.release();
+                        }
+                    });
+                    mx.start();
+                    Toast toast = Toast.makeText(getBaseContext(),"Needs atleast 1 Row",Toast.LENGTH_SHORT);
+                    toast.show();
                 }
                 ab.setText(a.toString());
             }
@@ -88,9 +113,35 @@ public class gridChecker extends AppCompatActivity {
                 });
                 mp.start();
                 TextView ab = findViewById(R.id.count2);
-                Integer a =Integer.parseInt(ab.getText().toString())-1;
-                if(a<0){
-                    a=0;
+                TextView ba = findViewById(R.id.count1);
+                Integer b =Integer.parseInt(ba.getText().toString());
+                Integer a =Integer.parseInt(ab.getText().toString());
+                if(b*a>2){
+                    a=a-1;
+
+                    final MediaPlayer mx = MediaPlayer.create(getBaseContext(), R.raw.error);
+                    mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        public void onCompletion(MediaPlayer mx) {
+                            mx.release();
+                        }
+                    });
+                    mx.start();
+                    Toast toast = Toast.makeText(getBaseContext(),"Needs atleast 2 boxes",Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                if(a<1){
+                    a=1;
+                }
+                else{
+                    final MediaPlayer mx = MediaPlayer.create(getBaseContext(), R.raw.error);
+                    mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        public void onCompletion(MediaPlayer mx) {
+                            mx.release();
+                        }
+                    });
+                    mx.start();
+                    Toast toast = Toast.makeText(getBaseContext(),"Needs atleast 1 column",Toast.LENGTH_SHORT);
+                    toast.show();
                 }
                 ab.setText(a.toString());
             }
@@ -124,6 +175,15 @@ public class gridChecker extends AppCompatActivity {
                 Integer a =Integer.parseInt(ab.getText().toString())-1;
                 if(a<1){
                     a=1;
+                    final MediaPlayer mx = MediaPlayer.create(getBaseContext(), R.raw.error);
+                    mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        public void onCompletion(MediaPlayer mx) {
+                            mx.release();
+                        }
+                    });
+                    mx.start();
+                    Toast toast = Toast.makeText(getBaseContext(),"Needs atleast 1 match",Toast.LENGTH_SHORT);
+                    toast.show();
                 }
                 ab.setText(a.toString());
             }

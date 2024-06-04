@@ -216,9 +216,9 @@ public class MainActivity extends AppCompatActivity {
                 TableRow.LayoutParams params2 = new TableRow.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT);
                 params2.weight = 1;
                 btx.setLayoutParams(params2);
-                btx.setId(i*rowx+j);
+                btx.setId((i*columnx)+j);
+                System.out.println(btx.getId());
                 bff.add(btx);
-
             }
             buttonx.add(bff);
         }
@@ -240,7 +240,7 @@ public class MainActivity extends AppCompatActivity {
                 buttonWidthAndHeight = width/ (columnx+2);
             }
             else{
-                buttonWidthAndHeight = width/ (columnx+1);
+                buttonWidthAndHeight = width/ (6);
             }
             for (int column = 0; column < columnx; column++) {
                 Block xbt = buttonx.get(row).get(column);
@@ -372,7 +372,12 @@ public class MainActivity extends AppCompatActivity {
         else{
             scoreFromBefore = getIntent().getIntExtra("Highscoreblue",0);
         }
+        System.out.println(";;;;;;;;;;;;;;;;;;;");
+        System.out.println(scorx);
         scorx=scorx+scoreFromBefore;
+        System.out.println(scoreFromBefore);
+        System.out.println(scorx);
+        System.out.println(";;;;;;;;;;;;;;;;;;;");
         score.setText("Score: " + scorx.toString());
         flag=true;
         if(getIntent().getIntExtra("matches",1)>1){
@@ -390,12 +395,17 @@ public class MainActivity extends AppCompatActivity {
                 countDownTimer1.cancel();
             }
         }
+        if((turn+lastWon)%2==0) {
+            System.out.println("Red Won");
+            System.out.println(scorx);
+            getIntent().putExtra("Highscorered", scorx);
+        }
+        else {
+            System.out.println("Blue Won");
+            System.out.println(scorx);
+            getIntent().putExtra("Highscoreblue", scorx);
+        }
         if((redWon+blueWon)<getIntent().getIntExtra("matches",1)){
-            if((turn+lastWon)%2==0) {
-                getIntent().putExtra("Highscorered", scorx);
-            }
-            else
-                getIntent().putExtra("Highscoreblue",scorx);
             getIntent().putExtra("LastWon",(turn+getIntent().getIntExtra("LastWon",0))%2+2);
             finish();
             startActivity(getIntent());
@@ -432,9 +442,13 @@ public class MainActivity extends AppCompatActivity {
             else if(blueWon>redWon){
                 textBut.setText(player2.getText().toString()+" WINS");
             }
-            else{
+            else if(getIntent().getIntExtra("matches",1)>1){
                 int scorered = getIntent().getIntExtra("Highscorered",0);
                 int scoreblue = getIntent().getIntExtra("Highsoreblue",0);
+                System.out.println("#####");
+                System.out.println(scorered);
+                System.out.println(scoreblue);
+                System.out.println("#####");
                 if(scorered>scoreblue){
                     textBut.setText(player2.getText().toString()+" WINS");
                 }
@@ -448,7 +462,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             redWon=blueWon=0;
-            winBox.show();
             SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
             SharedPreferences.Editor myEdit = sharedPreferences.edit();
             Integer h1 = sharedPreferences.getInt("Highscore", 0);
@@ -457,6 +470,7 @@ public class MainActivity extends AppCompatActivity {
                 score.setText("New HighScore: "+scorx.toString());
             }
             myEdit.apply();
+            winBox.show();
         }
     }
     public void startTimer1(long timerStartFrom, ProgressBar barx) {
