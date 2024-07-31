@@ -84,8 +84,11 @@ public class gridChecker extends AppCompatActivity {
                         }
                     });
                     mx.start();
-                    Toast toast = Toast.makeText(getBaseContext(),"Needs atleast 2 boxes",Toast.LENGTH_SHORT);
-                    toast.show();
+                    if(b*a<2){
+                        Toast toast = Toast.makeText(getBaseContext(),"Needs atleast 2 boxes",Toast.LENGTH_SHORT);
+                        toast.show();
+                        a=a+1;
+                    }
                 }
                 if(a<1){
                     a=1;
@@ -126,13 +129,14 @@ public class gridChecker extends AppCompatActivity {
                         }
                     });
                     mx.start();
-                    Toast toast = Toast.makeText(getBaseContext(),"Needs atleast 2 boxes",Toast.LENGTH_SHORT);
-                    toast.show();
+                    if(b*a<2){
+                        Toast toast = Toast.makeText(getBaseContext(),"Needs atleast 2 boxes",Toast.LENGTH_SHORT);
+                        toast.show();
+                        a=a+1;
+                    }
                 }
                 if(a<1){
                     a=1;
-                }
-                else{
                     final MediaPlayer mx = MediaPlayer.create(getBaseContext(), R.raw.error);
                     mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                         public void onCompletion(MediaPlayer mx) {

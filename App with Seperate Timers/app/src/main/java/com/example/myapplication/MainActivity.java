@@ -435,12 +435,18 @@ public class MainActivity extends AppCompatActivity {
         });
         mp.start();
 
+        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+        SharedPreferences.Editor myEdit = sharedPreferences.edit();
         if(redWon+blueWon>=getIntent().getIntExtra("matches",1)){
             if(redWon<blueWon){
                 textBut.setText(player1.getText().toString()+" WINS");
+                myEdit.putString("WonBefore","Blue");
+                myEdit.apply();
             }
-            else if(blueWon>redWon){
+            else if(blueWon<redWon){
                 textBut.setText(player2.getText().toString()+" WINS");
+                myEdit.putString("WonBefore","Red");
+                myEdit.apply();
             }
             else if(getIntent().getIntExtra("matches",1)>1){
                 int scorered = getIntent().getIntExtra("Highscorered",0);
@@ -451,9 +457,13 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("#####");
                 if(scorered>scoreblue){
                     textBut.setText(player2.getText().toString()+" WINS");
+                    myEdit.putString("WonBefore","Red");
+                    myEdit.apply();
                 }
                 else if (scoreblue>scorered){
                     textBut.setText(player1.getText().toString()+" WINS");
+                    myEdit.putString("WonBefore","Blue");
+                    myEdit.apply();
                 }
                 else{
                     getIntent().putExtra("LastWon",(turn+getIntent().getIntExtra("LastWon",0))%2+2);
@@ -462,8 +472,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             redWon=blueWon=0;
-            SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
-            SharedPreferences.Editor myEdit = sharedPreferences.edit();
             Integer h1 = sharedPreferences.getInt("Highscore", 0);
             if(h1<scorx) {
                 myEdit.putInt("Highscore", scorx);

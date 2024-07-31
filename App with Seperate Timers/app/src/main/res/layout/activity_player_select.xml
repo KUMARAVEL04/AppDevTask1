@@ -263,7 +263,7 @@
         android:scaleX=".8"
         android:scaleY=".8"
         android:text="@string/empty"
-        android:textColor="#FE5F57"
+        android:textColor="@color/evenLigherBlue"
         app:layout_constraintBottom_toBottomOf="@+id/constraintLayout9"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -298,7 +298,7 @@
         android:scaleX=".8"
         android:scaleY=".8"
         android:text="@string/empty"
-        android:textColor="#2FB5EF"
+        android:textColor="@color/lightred"
         app:layout_constraintBottom_toBottomOf="@+id/cl1"
         app:layout_constraintEnd_toEndOf="@+id/editTextText2" />
 

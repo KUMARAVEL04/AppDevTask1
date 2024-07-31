@@ -4,6 +4,9 @@ import android.app.ActivityOptions;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +17,7 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -33,8 +37,18 @@ public class MainActivity2 extends AppCompatActivity {
         });
 
         SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+
         Integer h1 = sh.getInt("Highscore", 0);
         TextView bx = findViewById(R.id.highScore);
+        String colorString=sh.getString("WonBefore","");
+        System.out.println("Color:"+colorString);
+        if(colorString=="Red"){
+            bx.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.lightred)));
+        }
+        else if(colorString=="Blue"){
+            bx.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.lightBlue)));
+        }
+        bx.setBackgroundTintMode(PorterDuff.Mode.SRC_IN);
         bx.setText("HIGHSCORE: "+h1.toString());
         Button but1 = findViewById(R.id.startGrid);
         but1.setOnClickListener(new View.OnClickListener() {
