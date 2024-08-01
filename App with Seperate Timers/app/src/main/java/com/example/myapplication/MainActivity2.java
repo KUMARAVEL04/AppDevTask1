@@ -14,8 +14,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.OnBackPressedCallback;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -36,19 +39,31 @@ public class MainActivity2 extends AppCompatActivity {
             return insets;
         });
 
+        OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                Intent a = new Intent(Intent.ACTION_MAIN);
+                a.addCategory(Intent.CATEGORY_HOME);
+                a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(a);            }
+        };
+        getOnBackPressedDispatcher().addCallback(this, onBackPressedCallback);
+
         SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
 
         Integer h1 = sh.getInt("Highscore", 0);
         TextView bx = findViewById(R.id.highScore);
-        String colorString=sh.getString("WonBefore","");
-        System.out.println("Color:"+colorString);
-        if(colorString=="Red"){
-            bx.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.lightred)));
-        }
-        else if(colorString=="Blue"){
-            bx.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.lightBlue)));
-        }
-        bx.setBackgroundTintMode(PorterDuff.Mode.SRC_IN);
+        bx.setOnClickListener(new View.OnClickListener() {
+                                  @Override
+                                  public void onClick(View v) {
+                                      String colorString=sh.getString("WonBefore","");
+                                      System.out.println("Color:"+colorString);
+                                      Toast toast = Toast.makeText(getBaseContext(),colorString+" Won Last",Toast.LENGTH_SHORT);
+                                      toast.show();
+                                  }
+                              }
+        );
+
         bx.setText("HIGHSCORE: "+h1.toString());
         Button but1 = findViewById(R.id.startGrid);
         but1.setOnClickListener(new View.OnClickListener() {
